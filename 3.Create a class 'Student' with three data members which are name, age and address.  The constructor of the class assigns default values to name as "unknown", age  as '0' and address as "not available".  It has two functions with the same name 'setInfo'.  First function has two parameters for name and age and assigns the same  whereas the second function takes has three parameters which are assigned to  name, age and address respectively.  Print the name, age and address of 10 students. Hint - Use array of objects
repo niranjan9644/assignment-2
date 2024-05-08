@@ -1,0 +1,57 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int age;
+    string address;
+
+public:
+    Student() {
+        name = "unknown";
+        age = 0;
+        address = "not available";
+    }
+
+    void setInfo(string name, int age) {
+        this->name = name;
+        this->age = age;
+    }
+
+    void setInfo(string name, int age, string address) {
+        this->name = name;
+        this->age = age;
+        this->address = address;
+    }
+
+    void printInfo() {
+        cout << "Name: " << name <<endl;
+        cout << "Age: " << age <<endl;
+        cout << "Address: " << address <<endl;
+    }
+};
+
+int main() {
+    Student students[10];
+
+    students[0].setInfo("gowri", 18, "nellore");
+    students[1].setInfo("dharshan", 17, "piler");
+    students[2].setInfo("eren", 20, "paradis island");
+    students[3].setInfo("mikasa", 19, "paradis island");
+    students[4].setInfo("captain levi", 24, "alone");
+    students[5].setInfo("gabi", 14, "cute");
+    students[6].setInfo("armin", 20, "paradis island");
+    students[7].setInfo("neeru", 19, "madanapalle");
+    students[8].setInfo("sanjusamson", 32, "rajasthan royals");
+    students[9].setInfo("ms dhoni", 42, "chennai super kings");
+
+    for (int i = 0; i < 10; i++) {
+        cout << "Student " << i + 1 << " Information:" <<endl;
+        students[i].printInfo();
+        cout << endl;
+    }
+
+    return 0;
+}
