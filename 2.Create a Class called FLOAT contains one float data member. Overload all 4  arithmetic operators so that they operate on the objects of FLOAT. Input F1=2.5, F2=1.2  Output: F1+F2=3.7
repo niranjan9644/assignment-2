@@ -1,0 +1,43 @@
+#include <iostream>
+
+class FLOAT {
+private:
+    float data;
+public:
+    FLOAT(float value) : data(value) {}
+
+    FLOAT operator+(const FLOAT& other) {
+        return FLOAT(data + other.data);
+    }
+
+    FLOAT operator-(const FLOAT& other) {
+        return FLOAT(data - other.data);
+    }
+
+    FLOAT operator*(const FLOAT& other) {
+        return FLOAT(data * other.data);
+    }
+
+    FLOAT operator/(const FLOAT& other) {
+        if (other.data != 0) {
+            return FLOAT(data / other.data);
+        } else {
+            cerr << "Error: Division by zero!" <<endl;
+            return FLOAT(0);
+        }
+    }
+
+    float getValue() const {
+        return data;
+    }
+};
+
+int main() {
+    FLOAT F1(2.5);
+    FLOAT F2(1.2);
+
+    FLOAT resultAdd = F1 + F2;
+    cout << "F1 + F2 = " << resultAdd.getValue() <<endl;
+
+    return 0;
+}
